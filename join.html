@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#000000">
+<title>QREW Zero — Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap">
+<style>
+html { background: #000; color-scheme: dark; }
+body { margin: 0; background: #000; }
+/* QREW Zero — black, Helvetica, Swiss. Shared by the gate and the invitation. */
+.cz {
+  --black: #000;
+  --off: #0c0c0c;
+  --raise: #161616;
+  --white: #fff;
+  --dim: #8e8e8e;
+  --line: #262626;
+  --mark: #ff3b1f;
+  --gold: #e8b65c;
+  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+.cz.th {
+  --sans: 'Noto Sans Thai', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+}
+.cz * { box-sizing: border-box; }
+
+.cz-shell { max-width: 640px; margin: 0 auto; padding: 26px 22px 70px; position: relative; }
+@media (min-width: 600px) { .cz-shell { padding: 44px 40px 90px; } }
+
+.cz-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 46px; }
+.cz-brand { font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--mark); }
+.cz.th .cz-brand { letter-spacing: .06em; }
+.cz-lang { display: flex; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.cz-lang button {
+  font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .08em;
+  background: transparent; color: var(--dim); border: 0; padding: 7px 11px; cursor: pointer; min-height: 32px;
+}
+.cz-lang button[aria-pressed='true'] { background: var(--white); color: var(--black); }
+
+.cz h1 {
+  font-weight: 800; font-size: clamp(38px, 11vw, 66px); line-height: .96;
+  letter-spacing: -.045em; margin: 0 0 18px; text-wrap: balance;
+}
+.cz.th h1 { font-weight: 700; font-size: clamp(30px, 8.4vw, 52px); line-height: 1.22; letter-spacing: -.01em; }
+.cz h1 em { font-style: normal; color: var(--mark); }
+.cz h2 {
+  font-weight: 800; font-size: clamp(26px, 7vw, 44px); line-height: 1.04;
+  letter-spacing: -.038em; margin: 0 0 16px; text-wrap: balance;
+}
+.cz.th h2 { font-weight: 700; font-size: clamp(23px, 6vw, 36px); line-height: 1.3; letter-spacing: 0; }
+.cz h2 em { font-style: normal; color: var(--mark); }
+.cz h2 em.gold { color: var(--gold); }
+
+.cz p { margin: 0 0 15px; max-width: 34em; }
+.cz .lede { font-size: clamp(17px, 4.2vw, 19.5px); line-height: 1.5; font-weight: 500; letter-spacing: -.012em; }
+.cz.th .lede { line-height: 1.7; letter-spacing: 0; font-weight: 400; }
+.cz .dim { color: var(--dim); }
+
+/* ---------- gate form ---------- */
+.cz-field { margin-bottom: 16px; }
+.cz-field label {
+  display: block; font-size: 12px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--dim); margin-bottom: 6px;
+}
+.cz.th .cz-field label { letter-spacing: .02em; text-transform: none; font-size: 14px; }
+.cz-field label .req { color: var(--mark); }
+.cz-field input {
+  width: 100%; background: var(--off); border: 1px solid var(--line); border-radius: 4px;
+  color: var(--white); font-family: var(--sans); font-size: 16.5px; padding: 14px 15px; min-height: 50px;
+}
+.cz-field input:focus { outline: none; border-color: var(--white); }
+
+.cz-terms {
+  background: var(--off); border: 1px solid var(--line); border-radius: 4px;
+  padding: 16px; margin: 24px 0 16px; max-height: 220px; overflow-y: auto;
+  font-size: 13.5px; line-height: 1.6; color: var(--dim); white-space: pre-wrap;
+}
+.cz.th .cz-terms { line-height: 1.8; font-size: 14px; }
+
+.cz-agree { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; margin-bottom: 20px; }
+.cz-agree input { width: 22px; height: 22px; accent-color: var(--mark); margin-top: 2px; flex-shrink: 0; }
+.cz-agree span { font-size: 15px; line-height: 1.45; }
+.cz.th .cz-agree span { line-height: 1.7; }
+
+.cz-btn {
+  display: inline-flex; align-items: center; justify-content: center; width: 100%;
+  background: var(--white); color: var(--black); border: 0; border-radius: 4px;
+  font-family: var(--sans); font-weight: 700; font-size: 16px; letter-spacing: -.01em;
+  padding: 16px 20px; min-height: 54px; cursor: pointer;
+}
+.cz-btn:disabled { opacity: .45; cursor: default; }
+.cz-btn.mark { background: var(--mark); color: var(--white); }
+.cz-err { color: var(--mark); font-size: 14.5px; margin-bottom: 14px; }
+.cz-fine { font-size: 12.5px; color: var(--dim); margin-top: 18px; line-height: 1.5; }
+.cz.th .cz-fine { line-height: 1.7; font-size: 13.5px; }
+
+/* ---------- invitation frames ---------- */
+.cz-frame { padding: 40px 0; border-bottom: 1px solid var(--line); }
+.cz-frame:last-of-type { border-bottom: 0; }
+.cz-no {
+  font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--mark); margin-bottom: 16px;
+}
+.cz.th .cz-no { letter-spacing: .04em; font-size: 12.5px; }
+.cz-no span { color: var(--dim); font-weight: 500; }
+
+.cz ul.plain { list-style: none; padding: 0; margin: 0 0 16px; }
+.cz ul.plain li {
+  padding: 11px 0 11px 24px; border-bottom: 1px solid var(--line);
+  position: relative; color: var(--dim); font-size: 15.5px; line-height: 1.45;
+}
+.cz.th ul.plain li { line-height: 1.7; }
+.cz ul.plain li::before { content: '✕'; position: absolute; left: 0; top: 12px; color: var(--mark); font-size: 12px; }
+/* The same list shape for things that are good. A ✕ against every benefit read
+   as a list of complaints. */
+.cz ul.plain.yes li::before { content: '✓'; color: var(--white); }
+
+.cz-feat div { padding: 13px 0; border-bottom: 1px solid var(--line); }
+.cz-feat b { display: block; font-size: 16.5px; font-weight: 700; letter-spacing: -.018em; margin-bottom: 2px; }
+.cz.th .cz-feat b { letter-spacing: 0; }
+.cz-feat span { font-size: 14.5px; color: var(--dim); line-height: 1.45; display: block; }
+.cz.th .cz-feat span { line-height: 1.7; }
+
+.cz-offer {
+  border: 1px solid var(--mark); border-radius: 6px; padding: 20px; margin: 4px 0 18px;
+  background: linear-gradient(180deg, rgba(255, 59, 31, .09), transparent);
+}
+.cz-offer .big { font-size: clamp(44px, 15vw, 72px); font-weight: 900; letter-spacing: -.05em; line-height: .9; color: var(--mark); margin-bottom: 8px; }
+.cz-offer .cap { font-size: 15.5px; font-weight: 600; letter-spacing: -.01em; }
+.cz-offer .sub { font-size: 14px; color: var(--dim); margin-top: 4px; }
+
+/* Their fee at full height with ours added beside it — the picture has to say
+   "on top of", which a 75/25 split bar said the opposite of. */
+.cz-stack { display: flex; height: 52px; border-radius: 4px; overflow: hidden; margin: 14px 0 6px; gap: 2px; }
+.cz-stack .yours { flex: 100; background: var(--white); color: var(--black); }
+.cz-stack .ours { flex: 20; background: var(--raise); color: var(--dim); }
+.cz-stack div { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13.5px; text-align: center; padding: 0 4px; }
+.cz-stackfoot { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; color: var(--dim); margin-bottom: 16px; }
+
+.cz-step { display: grid; grid-template-columns: 32px 1fr; gap: 12px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.cz-step .n { font-size: 26px; font-weight: 800; line-height: 1.1; color: var(--mark); letter-spacing: -.04em; }
+.cz-step b { display: block; font-size: 17px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 3px; }
+.cz.th .cz-step b { letter-spacing: 0; }
+.cz-step p { font-size: 14.5px; color: var(--dim); margin: 0 0 11px; line-height: 1.45; }
+.cz.th .cz-step p { line-height: 1.7; }
+
+.cz a.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--white); color: var(--black); text-decoration: none;
+  font-weight: 700; font-size: 14.5px; padding: 12px 18px; border-radius: 4px;
+  margin: 0 6px 8px 0; min-height: 46px;
+}
+.cz a.btn.ghost { background: transparent; color: var(--white); border: 1px solid var(--line); }
+.cz a.btn.mark { background: var(--mark); color: var(--white); }
+
+.cz-note {
+  background: var(--off); border-left: 2px solid var(--mark); padding: 12px 15px;
+  border-radius: 0 4px 4px 0; font-size: 14px; color: var(--dim); margin-top: 14px; line-height: 1.5;
+}
+.cz.th .cz-note { line-height: 1.7; }
+.cz-note b { color: var(--white); }
+
+.cz-sig { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin-top: 26px; }
+.cz.th .cz-sig { letter-spacing: .02em; text-transform: none; font-size: 14.5px; }
+.cz-sig b { color: var(--white); }
+
+.cz [lang-en], .cz [lang-th] { display: none; }
+.cz.en [lang-en], .cz.th [lang-th] { display: revert; }
+.cz-lang button:focus-visible, .cz-btn:focus-visible, .cz a.btn:focus-visible { outline: 2px solid var(--mark); outline-offset: 2px; }
+.cz-ok { border: 1px solid var(--gold); border-radius: 6px; padding: 18px 20px; margin: 0 0 22px; background: linear-gradient(180deg, rgba(232,182,92,.08), transparent); }
+.cz-ok b { color: var(--gold); display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+.cz.th .cz-ok b { letter-spacing: .03em; }
+.cz-ok p { margin: 0; }
+.cz-prep { list-style: none; padding: 0; margin: 0 0 16px; }
+.cz-prep li { padding: 9px 0 9px 24px; border-bottom: 1px solid var(--line); position: relative; font-size: 15px; color: var(--dim); line-height: 1.45; }
+.cz-prep li::before { content: '→'; position: absolute; left: 0; color: var(--mark); }
+</style>
+</head>
+<body>
+<div class="cz en" id="cz">
+<div class="cz-shell">
+  <div class="cz-top">
+    <div class="cz-brand"><span lang-en>QREW · private invitation</span><span lang-th>QREW · คำเชิญส่วนตัว</span></div>
+    <div class="cz-lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="th" aria-pressed="false">ไทย</button>
+    </div>
+  </div>
+
+  <!-- ===== the gate ===== -->
+  <div id="gate">
+    <h1 lang-en>You've been <em>selected.</em></h1>
+    <h1 lang-th>คุณคือคนที่<em>เราเลือก</em></h1>
+    <p class="lede" lang-en>Something for the Bangkok crew, before anyone else sees it. Everything past this page is confidential — so tell me who you are first.</p>
+    <p class="lede" lang-th>บางอย่างที่สร้างเพื่อทีมงานในกรุงเทพฯ ก่อนใครจะได้เห็น ทุกอย่างหลังหน้านี้เป็นความลับ — ขอทราบว่าคุณเป็นใครก่อนนะครับ</p>
+
+    <form id="f" novalidate>
+      <div class="cz-field"><label for="fullName"><span lang-en>Full name</span><span lang-th>ชื่อ-นามสกุล</span> <span class="req">*</span></label><input id="fullName" name="fullName" autocomplete="name" required></div>
+      <div class="cz-field"><label for="nickname"><span lang-en>Nickname (optional)</span><span lang-th>ชื่อเล่น (ไม่บังคับ)</span></label><input id="nickname" name="nickname" autocomplete="nickname"></div>
+      <div class="cz-field"><label for="phone"><span lang-en>Phone</span><span lang-th>เบอร์โทรศัพท์</span> <span class="req">*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      <div class="cz-field"><label for="email"><span lang-en>Email</span><span lang-th>อีเมล</span> <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+
+      <div class="cz-terms" id="terms" tabindex="0" aria-label="Confidentiality agreement"></div>
+
+      <label class="cz-agree"><input type="checkbox" id="agree" name="agree"><span><span lang-en>I agree to the confidentiality terms above, and I understand this counts as my electronic signature.</span><span lang-th>ข้าพเจ้ายอมรับข้อตกลงการรักษาความลับข้างต้น และเข้าใจว่าการกดยอมรับนี้ถือเป็นลายมือชื่ออิเล็กทรอนิกส์</span></span></label>
+
+      <div class="cz-err" id="err" role="alert" hidden></div>
+      <button class="cz-btn" id="go" type="submit"><span lang-en>Agree &amp; continue</span><span lang-th>ยอมรับและไปต่อ</span></button>
+      <p class="cz-fine"><span lang-en>Your name, contact details, IP address and the time you accept are recorded as evidence of agreement. If you'd rather not agree, simply close this page — no hard feelings.</span><span lang-th>ชื่อ ข้อมูลติดต่อ หมายเลขไอพี และเวลาที่ยอมรับ จะถูกบันทึกไว้เป็นหลักฐานการตกลง หากไม่สะดวกยอมรับ ปิดหน้านี้ได้เลยครับ ไม่ถือสาอะไร</span></p>
+    </form>
+  </div>
+
+  <!-- ===== the invitation ===== -->
+  <div id="invite" hidden>
+    <div class="cz-frame">
+      <div class="cz-ok"><b>QREW Zero</b><p><span lang-en>You're on the list. Welcome to the founding crew.</span><span lang-th>คุณอยู่ในรายชื่อแล้ว ยินดีต้อนรับสู่ทีมงานรุ่นก่อตั้ง</span></p></div>
+      <h1 lang-en>What happens <em>now.</em></h1>
+      <h1 lang-th>ต่อจากนี้<em>เกิดอะไรขึ้น</em></h1>
+      <p class="lede" lang-en>QREW is finished and being tested by hand. It goes on your phone in two ways, and both start from here.</p>
+      <p class="lede" lang-th>QREW สร้างเสร็จแล้วและกำลังทดสอบอยู่ จะขึ้นมือถือของคุณได้สองทาง และทั้งสองเริ่มจากตรงนี้</p>
+
+      <div class="cz-step"><div class="n">1</div><div>
+        <b><span lang-en>Your TestFlight invite comes by email</span><span lang-th>คำเชิญ TestFlight จะส่งไปทางอีเมล</span></b>
+        <p><span lang-en>To the address you just gave. Apple is approving the developer account now; the invite follows the day they do. Install TestFlight from the App Store so you're ready.</span><span lang-th>ไปที่อีเมลที่คุณเพิ่งกรอก ตอนนี้ Apple กำลังอนุมัติบัญชีนักพัฒนา คำเชิญจะตามไปในวันที่อนุมัติ ติดตั้ง TestFlight จาก App Store รอไว้ได้เลย</span></p>
+        <a class="btn" href="https://apps.apple.com/app/testflight/id899247664" target="_blank" rel="noopener noreferrer">TestFlight — App Store</a>
+      </div></div>
+
+      <div class="cz-step"><div class="n">2</div><div>
+        <b><span lang-en>Or see it today, in person</span><span lang-th>หรือดูวันนี้เลย ตัวต่อตัว</span></b>
+        <p><span lang-en>If you're with James, he opens it on your phone in a minute through his test server — no install, nothing permanent.</span><span lang-th>ถ้าอยู่กับเจมส์ เขาเปิดให้ดูบนมือถือคุณได้ในนาทีเดียวผ่านเซิร์ฟเวอร์ทดสอบ — ไม่ต้องติดตั้งอะไร</span></p>
+        <div class="cz-note"><b><span lang-en>Reach him:</span><span lang-th>ติดต่อ:</span></b> <a href="https://instagram.com/qrewbkk" style="color:#fff">@qrewbkk</a> · <a href="mailto:hello@qrewbkk.com" style="color:#fff">hello@qrewbkk.com</a></div>
+      </div></div>
+
+      <div class="cz-step"><div class="n">3</div><div>
+        <b><span lang-en>Build your profile — fifteen minutes</span><span lang-th>สร้างโปรไฟล์ — สิบห้านาที</span></b>
+        <p><span lang-en>Sign in with your email — a code arrives, type it in. Then Profile → Talent → roles, bio, cities, rates, portfolio, ID. Everything is editable later.</span><span lang-th>เข้าสู่ระบบด้วยอีเมล จะมีรหัสส่งไปให้ กรอกแล้วไปที่ Profile → Talent ใส่สาขา ประวัติ เมือง เรต ผลงาน บัตรประชาชน แก้ไขทีหลังได้ทุกอย่าง</span></p>
+      </div></div>
+    </div>
+
+    <div class="cz-frame">
+      <div class="cz-no"><span lang-en>have these ready</span><span lang-th>เตรียมไว้ให้พร้อม</span></div>
+      <h2 lang-en>Bring to your first sit-down with the app.</h2>
+      <h2 lang-th>เตรียมไว้ตอนนั่งลงกับแอปครั้งแรก</h2>
+      <ul class="cz-prep">
+        <li><span lang-en>Your day rate and half-day rate, per role — and what each includes</span><span lang-th>เรตเต็มวันและครึ่งวัน แยกตามตำแหน่ง — และรวมอะไรบ้าง</span></li>
+        <li><span lang-en>8–12 portfolio images per craft (phone photos of prints are fine)</span><span lang-th>ผลงาน 8–12 ภาพต่อสาขา (ถ่ายจากปริ๊นท์ด้วยมือถือก็ได้)</span></li>
+        <li><span lang-en>ID card or passport, and the bank account you get paid into</span><span lang-th>บัตรประชาชนหรือพาสปอร์ต และบัญชีธนาคารที่รับเงิน</span></li>
+        <li><span lang-en>Dates you're already booked this month, to block</span><span lang-th>วันที่ติดงานแล้วเดือนนี้ เพื่อบล็อกไว้</span></li>
+      </ul>
+      <p class="dim" lang-en>The full story — how the money works, the 0% founding offer, why this isn't another freelance site — is at <a href="/zero" style="color:#fff">qrewbkk.com/zero</a>.</p>
+      <p class="dim" lang-th>เรื่องราวทั้งหมด — เงินทำงานยังไง ข้อเสนอ 0% สำหรับรุ่นก่อตั้ง ทำไมนี่ไม่ใช่เว็บฟรีแลนซ์ทั่วไป — อยู่ที่ <a href="/zero" style="color:#fff">qrewbkk.com/zero</a></p>
+      <p class="cz-sig"><span lang-en>— <b>James</b> · Athibodee Suwannachot · founder, QREW</span><span lang-th>— <b>เจมส์</b> · อธิบดี สุวรรณโชติ · ผู้ก่อตั้ง QREW</span></p>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+(function () {
+  var NDA = {"version": "2026-09-01.1", "en": "QREW Zero — Confidentiality Agreement (2026-09-01.1)\n\nBy continuing I agree that:\n\n1. Everything I am about to see — the QREW platform, its features, screens, designs, commission and pricing structure, launch timing, business plans, and the identity of other people invited to QREW Zero — is confidential information belonging to White Glove Co., Ltd.\n\n2. I will not disclose any of it to any third party, and I will not publish, post, stream or share any screenshot, screen recording, photograph or description of the platform on social media or in any public forum.\n\n3. I will not discuss the platform or its commercial terms with press, competitors, or industry contacts outside the QREW Zero group.\n\n4. These obligations last for two (2) years, or until the information lawfully becomes public — for example when QREW launches publicly — whichever happens first.\n\n5. This does not apply to information that is already public through no fault of mine, that I already lawfully knew, or that I am legally required to disclose.\n\n6. All intellectual property in the QREW platform belongs to White Glove Co., Ltd. Feedback I give may be used freely, without obligation or payment.\n\n7. This agreement is governed by the laws of the Kingdom of Thailand, and the courts of Bangkok have exclusive jurisdiction.\n\n8. I agree that clicking to accept is an electronic signature with the same legal effect as a handwritten signature under the Electronic Transactions Act B.E. 2544 (2001), and that my name, contact details, IP address and the time of acceptance are recorded as evidence of it.", "th": "QREW Zero — ข้อตกลงการรักษาความลับ (2026-09-01.1)\n\nการกดยอมรับ ถือว่าข้าพเจ้าตกลงว่า\n\n1. ทุกสิ่งที่ข้าพเจ้ากำลังจะได้เห็น — แพลตฟอร์ม QREW ฟีเจอร์ หน้าจอ การออกแบบ โครงสร้างค่าคอมมิชชั่นและราคา กำหนดการเปิดตัว แผนธุรกิจ รวมถึงรายชื่อผู้ที่ได้รับเชิญเข้าร่วม QREW Zero — เป็นข้อมูลอันเป็นความลับของบริษัท ไวท์ กลอฟ จำกัด\n\n2. ข้าพเจ้าจะไม่เปิดเผยข้อมูลดังกล่าวแก่บุคคลภายนอก และจะไม่เผยแพร่ ลงประกาศ ถ่ายทอด หรือแบ่งปันภาพหน้าจอ วิดีโอบันทึกหน้าจอ ภาพถ่าย หรือคำบรรยายเกี่ยวกับแพลตฟอร์มบนโซเชียลมีเดียหรือในที่สาธารณะ\n\n3. ข้าพเจ้าจะไม่พูดคุยเกี่ยวกับแพลตฟอร์มหรือเงื่อนไขทางการค้ากับสื่อมวลชน คู่แข่ง หรือผู้ติดต่อในวงการ นอกกลุ่ม QREW Zero\n\n4. ข้อผูกพันนี้มีผลเป็นเวลาสอง (2) ปี หรือจนกว่าข้อมูลจะถูกเปิดเผยต่อสาธารณะโดยชอบด้วยกฎหมาย เช่น เมื่อ QREW เปิดตัวอย่างเป็นทางการ แล้วแต่เหตุใดจะเกิดขึ้นก่อน\n\n5. ข้อผูกพันนี้ไม่ใช้กับข้อมูลที่เป็นสาธารณะอยู่แล้วโดยมิใช่ความผิดของข้าพเจ้า ข้อมูลที่ข้าพเจ้าทราบอยู่ก่อนโดยชอบด้วยกฎหมาย หรือข้อมูลที่กฎหมายกำหนดให้ต้องเปิดเผย\n\n6. ทรัพย์สินทางปัญญาทั้งหมดในแพลตฟอร์ม QREW เป็นของบริษัท ไวท์ กลอฟ จำกัด และข้อเสนอแนะที่ข้าพเจ้าให้ไว้ บริษัทสามารถนำไปใช้ได้โดยอิสระ โดยไม่มีข้อผูกพันหรือค่าตอบแทนใด ๆ\n\n7. ข้อตกลงนี้อยู่ภายใต้บังคับกฎหมายแห่งราชอาณาจักรไทย และให้ศาลในกรุงเทพมหานครเป็นศาลที่มีเขตอำนาจแต่เพียงผู้เดียว\n\n8. ข้าพเจ้าตกลงว่าการกดยอมรับถือเป็นลายมือชื่ออิเล็กทรอนิกส์ซึ่งมีผลผูกพันเช่นเดียวกับลายมือชื่อจริง ตามพระราชบัญญัติว่าด้วยธุรกรรมทางอิเล็กทรอนิกส์ พ.ศ. 2544 และชื่อ ข้อมูลติดต่อ หมายเลขไอพี และเวลาที่ยอมรับ จะถูกบันทึกไว้เป็นหลักฐาน"};
+  var SUPABASE_URL = 'https://kqavcivaxejysgpivlfo.supabase.co', ANON = 'sb_publishable_uommZOQ5DwsDGFdJCsTRLg_R-uAL8jQ';
+  var root = document.getElementById('cz'), terms = document.getElementById('terms');
+  var lang = 'en';
+  function setLang(l) {
+    lang = l; root.classList.remove('en', 'th'); root.classList.add(l); document.documentElement.lang = l;
+    document.querySelectorAll('.cz-lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === l)); });
+    terms.textContent = NDA[l];
+    try { localStorage.setItem('qrew-zero-lang', l); } catch (e) {}
+  }
+  document.querySelectorAll('.cz-lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  var saved = null; try { saved = localStorage.getItem('qrew-zero-lang'); } catch (e) {}
+  setLang(saved === 'th' || (!saved && /^th/i.test(navigator.language || '')) ? 'th' : 'en');
+
+  // Already accepted on this phone: straight to the invitation.
+  try { if (localStorage.getItem('qrew-zero-accepted') === NDA.version) show(); } catch (e) {}
+
+  function show() {
+    document.getElementById('gate').hidden = true;
+    document.getElementById('invite').hidden = false;
+    window.scrollTo(0, 0);
+  }
+  async function sha256(text) {
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
+  }
+  var t = function (en, th) { return lang === 'th' ? th : en; };
+  document.getElementById('f').addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    var err = document.getElementById('err'), go = document.getElementById('go');
+    var v = function (id) { return document.getElementById(id).value.trim(); };
+    var fullName = v('fullName'), nickname = v('nickname'), phone = v('phone'), email = v('email').toLowerCase();
+    var fail = function (m) { err.textContent = m; err.hidden = false; };
+    err.hidden = true;
+    if (fullName.length < 2) return fail(t('Please enter your full name.', 'กรุณากรอกชื่อ-นามสกุล'));
+    if (!/^\+?[\d\s-]{8,18}$/.test(phone)) return fail(t('Please enter a valid phone number.', 'กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง'));
+    if (!/^\S+@\S+\.\S+$/.test(email)) return fail(t('Please enter a valid email address.', 'กรุณากรอกอีเมลให้ถูกต้อง'));
+    if (!document.getElementById('agree').checked) return fail(t('You need to agree to the confidentiality terms to continue.', 'กรุณายอมรับข้อตกลงการรักษาความลับเพื่อดำเนินการต่อ'));
+    go.disabled = true;
+    try {
+      var body = {
+        p_full_name: fullName, p_nickname: nickname || null, p_phone: phone, p_email: email,
+        p_nda_version: NDA.version, p_nda_text_sha256: await sha256(NDA[lang]), p_language: lang
+      };
+      var res = await fetch(SUPABASE_URL + '/rest/v1/rpc/accept_beta_nda', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: ANON, Authorization: 'Bearer ' + ANON },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) { var j = {}; try { j = await res.json(); } catch (e) {} throw new Error(j.message || ('HTTP ' + res.status)); }
+      try { localStorage.setItem('qrew-zero-accepted', NDA.version); } catch (e) {}
+      show();
+    } catch (e) {
+      fail(t('Something went wrong saving that — please try again.', 'เกิดข้อผิดพลาดในการบันทึก กรุณาลองใหม่อีกครั้ง') + (e && e.message ? ' (' + e.message + ')' : ''));
+      go.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
